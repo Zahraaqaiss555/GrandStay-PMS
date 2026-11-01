@@ -1,0 +1,12 @@
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary Office files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Logs
+*.log

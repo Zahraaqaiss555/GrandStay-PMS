@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جراند ستاي PMS | نظام إدارة الفنادق الذكي</title>
+  <!-- Google Fonts: Readex Pro (Arabic) & Plus Jakarta Sans (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Main Glassmorphism Stylesheet (Production Minified) -->
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Blobs for Dreamy Pastel Glassmorphism Effect -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <div class="app-container">
+
+    <!-- ====================================================================
+         Sidebar Navigation Panel (Frosted Glass)
+         ==================================================================== -->
+    <aside class="sidebar">
+      <div class="brand-wrapper">
+        <div class="brand-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1 data-i18n="appName">جراند ستاي PMS</h1>
+          <p data-i18n="appSubtitle">نظام إدارة الفنادق الذكي</p>
+        </div>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item active" data-nav="dashboard">
+          <a href="#dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span data-i18n="navDashboard">لوحة التحكم</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="bookings">
+          <a href="#bookings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span data-i18n="navBookings">الحجوزات والتقويم</span>
+            <span class="nav-badge">14</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="staff">
+          <a href="#staff">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span data-i18n="navEmployees">إدارة الموظفين</span>
+            <span class="nav-badge" id="navStaffCountBadge">9</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="attendance">
+          <a href="#attendance">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span data-i18n="navAttendance">سجل الحضور</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="housekeeping">
+          <a href="#housekeeping">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            <span data-i18n="navHousekeeping">التدبير والصيانة</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="analytics">
+          <a href="#analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span data-i18n="navAnalytics">التقارير والتحليلات</span>
+          </a>
+        </li>
+        <li class="nav-item" data-nav="settings">
+          <a href="#settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            <span data-i18n="navSettings">إعدادات النظام</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Night Audit Quick Status Card at Sidebar Bottom -->
+      <div class="sidebar-card" id="nightAuditTrigger" style="cursor: pointer;" title="انقر لتشغيل التدقيق اليومي الفوري">
+        <div class="night-audit-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
+        <div class="night-audit-info">
+          <h4 data-i18n="nightAuditBoxTitle">الإقفال اليومي (Night Audit)</h4>
+          <p data-i18n="nightAuditBoxDesc">تم بنجاح الساعة 03:00 ص</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         Main Workspace
+         ==================================================================== -->
+    <main class="main-wrapper">
+
+      <!-- Top Navigation & Global Controls -->
+      <header class="top-bar">
+        <div class="search-container" id="globalSearchContainer">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="globalSearchInput" class="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث عن نزيل، رقم غرفة، أو كود حجز..." autocomplete="off">
+          <button type="button" class="search-clear-btn" id="globalSearchClearBtn" style="display:none;" title="مسح نص البحث">&times;</button>
+          <kbd class="search-kbd-hint">Ctrl K</kbd>
+          <!-- Live Global Search Dropdown -->
+          <div class="search-results-dropdown" id="searchResultsDropdown" style="display:none;"></div>
+        </div>
+
+        <div class="top-controls">
+          <!-- Required Language Switcher Button (العربية / English) -->
+          <button class="pill-button active-toggle" id="langToggleBtn" title="تبديل لغة الواجهة">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span data-i18n="langToggle">English</span>
+          </button>
+
+          <!-- Dual Currency Switcher Button (IQD / USD) -->
+          <button class="pill-button" id="currencyToggleBtn" title="تبديل العملة (دينار / دولار)">
+            $ USD
+          </button>
+
+          <!-- Notifications Bell & Dropdown Container -->
+          <div style="position: relative;">
+            <button class="icon-btn" id="notifBellBtn" title="التنبيهات اللحظية" onclick="toggleNotificationsDropdown(event)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span class="badge-dot" id="notifBadgeCount">3</span>
+            </button>
+
+            <!-- Notifications Dropdown Panel -->
+            <div class="notification-dropdown" id="notificationDropdown" onclick="event.stopPropagation()">
+              <div class="notif-header">
+                <h4 id="notifHeaderTitle">التنبيهات اللحظية (<span style="color: #7C3AED;">3 جديدة</span>)</h4>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="card-action-link" onclick="clearAllNotifications()" id="markAllReadLink">تحديد كمقروء</span>
+                  <span style="color: #CBD5E1;">•</span>
+                  <span class="card-action-link" onclick="deleteAllNotifications()" id="clearAllNotifsLink" style="color: #94A3B8;">مسح الكل</span>
+                </div>
+              </div>
+              <div class="notif-list" id="notifListContainer">
+                <!-- Rendered dynamically by renderNotifications() -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Staff User Profile Bar & Quick Dropdown -->
+          <div style="position: relative;">
+            <div class="user-profile-bar" id="userProfileBtn" title="الملف الشخصي للمدير">
+              <div class="profile-avatar-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="profile-name" id="topBarManagerName">سارة المنصور</div>
+                <div class="profile-role" id="topBarManagerRole">مدير العمليات</div>
+              </div>
+            </div>
+
+            <!-- Profile Dropdown Panel -->
+            <div class="profile-dropdown-panel" id="profileDropdown" onclick="event.stopPropagation()">
+              <div style="text-align: center; padding-bottom: 14px; border-bottom: 1px solid #E2E8F0; margin-bottom: 14px;">
+                <div class="profile-dropdown-avatar-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <h4 id="dropdownManagerName" style="font-size: 1rem; font-weight: 800; color: var(--text-main);">سارة المنصور</h4>
+                  <button class="icon-edit-mini" onclick="openEditManagerModal()" title="تعديل اسم وبيانات المدير">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <p id="dropdownManagerRole" style="font-size: 0.78rem; font-weight: 600; color: #7C3AED; margin-top: 2px;">مدير العمليات</p>
+                <p id="dropdownManagerEmail" style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">sarah.mansoor@grandstay.com</p>
+                <span class="table-badge badge-paid" style="margin-top: 8px;">صلاحية: مدير عام النظام</span>
+              </div>
+              
+              <!-- Quick Button to Edit Manager Name & Profile -->
+              <button class="pill-button" style="width: 100%; justify-content: center; margin-bottom: 8px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);" onclick="openEditManagerModal()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+                <span>تعديل اسم وبيانات المدير</span>
+              </button>
+              
+              <button class="pill-button" style="width: 100%; justify-content: center; margin-bottom: 8px;" onclick="switchView('settings'); toggleProfileDropdown();">
+                إعدادات المنظومة والفندق
+              </button>
+              <button class="pill-button" style="width: 100%; justify-content: center; background: #FEE2E2; color: #DC2626; border-color: #FECACA;" onclick="showToast('تم تسجيل الخروج بنجاح من النظام'); toggleProfileDropdown();">
+                تسجيل الخروج
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           VIEW 1: DASHBOARD (لوحة التحكم الرئيسية)
+           ==================================================================== -->
+      <section id="view-dashboard" class="app-view active">
+        <!-- Dashboard Main Grid -->
+        <div class="dashboard-grid">
+
+        <!-- Left / Center Column -->
+        <section class="grid-col-main">
+
+          <!-- Welcome Banner with Quick Action Buttons -->
+          <div class="welcome-banner">
+            <div class="welcome-text">
+              <h2 id="welcomeBannerTitle" data-i18n="welcomeTitle">مرحباً، سارة المنصور</h2>
+              <p data-i18n="welcomeSubtitle">إليك نظرة شاملة على إشغال الفندق والإيرادات لهذا اليوم.</p>
+            </div>
+            <div class="quick-actions-bar">
+              <button class="btn-primary" id="newBookingBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span data-i18n="btnNewBooking">حجز جديد</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dual Widgets: Total Rooms Donut & Performance Metrics -->
+          <div class="dual-stats-row">
+
+            <!-- Donut Chart Card (Echoing Total Employees in Image) -->
+            <div class="glass-card">
+              <div class="card-header">
+                <h3 class="card-title" data-i18n="totalRoomsTitle">حالة وإشغال الغرف</h3>
+                <span class="room-type-tag" style="background: rgba(139, 92, 246, 0.1); color: #7C3AED; padding: 4px 10px; border-radius: 999px; font-weight: 700;">48 غرفة</span>
+              </div>
+              <div class="donut-widget">
+                <div class="donut-chart-container" id="donutChartContainer">
+                  <!-- Rendered dynamically via SVG -->
+                </div>
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-dot-label">
+                      <span class="legend-dot dot-occupied"></span>
+                      <span data-i18n="legendOccupied">غرف مسكونة</span>
+                    </div>
+                    <span class="legend-val">38</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot-label">
+                      <span class="legend-dot dot-available"></span>
+                      <span data-i18n="legendAvailable">غرف متوفرة</span>
+                    </div>
+                    <span class="legend-val">8</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot-label">
+                      <span class="legend-dot dot-maint"></span>
+                      <span data-i18n="legendMaint">صيانة وتنظيف</span>
+                    </div>
+                    <span class="legend-val">2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- KPI Rates Card (ADR, RevPAR, Occupancy) -->
+            <div class="glass-card">
+              <div class="card-header">
+                <h3 class="card-title" data-i18n="topSkillsTitle">مؤشرات الأداء الفندقي (KPIs)</h3>
+                <span class="card-action-link">اليوم</span>
+              </div>
+              <div class="rates-list">
+                <div class="rate-item-row">
+                  <div class="rate-item-header">
+                    <span class="rate-item-name" data-i18n="adrLabel">متوسط سعر الغرفة (ADR)</span>
+                    <span class="rate-item-val" id="adrValue">$145</span>
+                  </div>
+                  <div class="rate-progress-track">
+                    <div class="rate-progress-fill fill-adr"></div>
+                  </div>
+                </div>
+
+                <div class="rate-item-row">
+                  <div class="rate-item-header">
+                    <span class="rate-item-name" data-i18n="revparLabel">العائد لكل غرفة متاحة (RevPAR)</span>
+                    <span class="rate-item-val" id="revparValue">$115</span>
+                  </div>
+                  <div class="rate-progress-track">
+                    <div class="rate-progress-fill fill-revpar"></div>
+                  </div>
+                </div>
+
+                <div class="rate-item-row">
+                  <div class="rate-item-header">
+                    <span class="rate-item-name" data-i18n="occupancyLabel">نسبة الإشغال العام</span>
+                    <span class="rate-item-val" id="occupancyValue">79.2%</span>
+                  </div>
+                  <div class="rate-progress-track">
+                    <div class="rate-progress-fill fill-occupancy"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Weekly Activity Multi-Line Chart (Matching Reference Image) -->
+          <div class="glass-card chart-card">
+            <div class="card-header">
+              <h3 class="card-title" data-i18n="weeklyActivityTitle">نشاط الإشغال والإيرادات الأسبوعي</h3>
+              <div class="chart-header-controls">
+                <select class="chart-pill-select">
+                  <option>14 - 21 ديسمبر 2026</option>
+                  <option>الأسبوع الماضي</option>
+                  <option>الشهر الحالي</option>
+                </select>
+              </div>
+            </div>
+            <div class="chart-wrapper">
+              <svg class="chart-svg" id="activityChartSvg" viewBox="0 0 600 180">
+                <!-- Smooth curves rendered via JS -->
+              </svg>
+            </div>
+            <div class="chart-legend-bottom">
+              <div class="legend-pill-tag">
+                <span class="legend-dot" style="background: #38BDF8;"></span>
+                <span data-i18n="chartLegendOccupancy">نسبة الإشغال %</span>
+              </div>
+              <div class="legend-pill-tag">
+                <span class="legend-dot" style="background: #FB923C;"></span>
+                <span data-i18n="chartLegendADR">متوسط السعر (ADR)</span>
+              </div>
+              <div class="legend-pill-tag">
+                <span class="legend-dot" style="background: #8B5CF6;"></span>
+                <span data-i18n="chartLegendRevPAR">العائد (RevPAR)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Housekeeping Board Interactive Preview -->
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title" data-i18n="roomStatusBoardTitle">لوحة التدبير الفندقي السريعة (انقر لتعديل الحالة)</h3>
+              <span class="card-action-link">تحديث لحظي</span>
+            </div>
+            <div class="room-status-grid" id="roomStatusGrid">
+              <!-- Dynamically populated room chips -->
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Right Side Column (Echoing Reference Image Layout) -->
+        <aside class="grid-col-side">
+
+          <!-- Shift Staff Attendance Widget (Like Top-Right 3-Boxes in Image) -->
+          <div class="glass-card">
+            <div class="staff-metrics-row">
+              <div class="metric-mini-box">
+                <div class="title" data-i18n="staffOnDuty">على رأس العمل</div>
+                <div class="count" style="color: #059669;">18</div>
+              </div>
+              <div class="metric-mini-box">
+                <div class="title" data-i18n="staffLate">متأخرون</div>
+                <div class="count" style="color: #D97706;">2</div>
+              </div>
+              <div class="metric-mini-box">
+                <div class="title" data-i18n="staffAbsent">إجازات</div>
+                <div class="count" style="color: #DC2626;">3</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIP Guest of the Day Card -->
+          <div class="glass-card vip-guest-card">
+            <div class="vip-avatar-wrap">
+              <img src="assets/images/vip_guest.jpg" alt="VIP Guest" class="vip-avatar-img">
+            </div>
+            <div class="vip-tag-wrapper">
+              <span class="vip-badge-pill">VIP Platinum</span>
+            </div>
+            <h4 class="vip-name" data-i18n="vipGuestName">د. طارق الحكيم</h4>
+            <p class="vip-stay-info" data-i18n="vipStayDetails">جناح الرويال الفاخر 402 • وصول اليوم</p>
+            <button class="btn-vip-action" id="btnVipAction" onclick="openVipModal()" data-i18n="btnWishVip">
+              استقبال وتجهيز الجناح
+            </button>
+          </div>
+
+          <!-- Guests Arrivals & Departures Feed -->
+          <!-- Guests Arrivals & Departures Feed -->
+          <div class="glass-card">
+            <div class="card-header" style="margin-bottom: 14px;">
+              <h3 class="card-title" style="font-size: 1rem;" data-i18n="recentGuestsTitle">حركة الاستقبال والمغادرة اليوم</h3>
+              <button type="button" class="card-action-link" style="background:none; border:none; cursor:pointer;" onclick="openArrivalsDeparturesModal()" data-i18n="viewAll">عرض الكل</button>
+            </div>
+            <div class="guests-mini-feed" id="todayGuestsFeed">
+              <div class="guest-feed-item" id="feedItemMohammed" onclick="openGuestArrivalModal('G-204')" title="انقر لتسجيل الوصول واستلام الغرفة">
+                <div class="guest-feed-avatar" style="background: rgba(56, 189, 248, 0.15); color: #0284C7;">م.ع</div>
+                <div class="guest-feed-details">
+                  <div class="guest-feed-name" id="guestNameMohammed">محمد العبيدي</div>
+                  <div class="guest-feed-room" id="guestRoomMohammed">غرفة 204 • ديلوكس</div>
+                </div>
+                <span class="guest-feed-status status-clean" id="guestStatusMohammed" data-i18n="statusArriving">وصول متوقع</span>
+              </div>
+
+              <div class="guest-feed-item" id="feedItemSamir" onclick="openGuestCheckoutModal('G-108')" title="انقر لإتمام المغادرة وتسوية الحساب">
+                <div class="guest-feed-avatar" style="background: rgba(251, 146, 60, 0.15); color: #D97706;">س.خ</div>
+                <div class="guest-feed-details">
+                  <div class="guest-feed-name" id="guestNameSamir">سمير خليل</div>
+                  <div class="guest-feed-room" id="guestRoomSamir">غرفة 108 • كلاسيك</div>
+                </div>
+                <span class="guest-feed-status status-dirty" id="guestStatusSamir" data-i18n="statusDeparting">مغادرة اليوم</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Mini Calendar (Matching Bottom-Right in Reference Image) -->
+          <div class="glass-card calendar-card">
+            <div class="calendar-header">
+              <span class="calendar-month-title" id="calendarMonthTitle" data-i18n="monthDec">ديسمبر 2026</span>
+              <div class="calendar-nav-btns">
+                <button type="button" class="cal-nav-btn" id="calPrevMonthBtn" onclick="prevCalendarMonth()" title="الشهر السابق">&lt;</button>
+                <button type="button" class="cal-nav-btn" id="calNextMonthBtn" onclick="nextCalendarMonth()" title="الشهر التالي">&gt;</button>
+              </div>
+            </div>
+            <div class="calendar-weekdays-grid" id="calendarWeekdaysGrid">
+              <span>أحد</span><span>إثن</span><span>ثلا</span><span>أرب</span><span>خمي</span><span>جمع</span><span>سبت</span>
+            </div>
+            <div class="calendar-days-grid" id="calendarDaysGrid">
+              <!-- Dynamically populated dates with real days and navigation -->
+            </div>
+            <!-- Calendar Day Interactive Drawer -->
+            <div class="calendar-day-drawer" id="calendarDayDrawer">
+              <div class="cal-drawer-header">
+                <div class="cal-drawer-date" id="calDrawerDate">1 ديسمبر 2026</div>
+                <span class="cal-drawer-tag" id="calDrawerOccupancy">إشغال 82%</span>
+              </div>
+              <div class="cal-drawer-body" id="calDrawerBody">
+                3 وصول متوقع • 1 مغادرة • مؤتمر استثماري
+              </div>
+              <div class="cal-drawer-actions">
+                <button type="button" class="cal-drawer-btn" onclick="viewCalendarDayDetails()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  <span id="calDrawerBtnText">عرض حركة هذا اليوم</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+      <!-- ====================================================================
+           VIEW 2: BOOKINGS & CALENDAR (الحجوزات والتقويم الزمني)
+           ==================================================================== -->
+      <section id="view-bookings" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="bookingsTitle">الحجوزات والتقويم الزمني (Tape Chart)</h2>
+            <p data-i18n="bookingsSubtitle">متابعة توفر الغرف، تسكين النزلاء، وتعديل فترات الإقامة</p>
+          </div>
+          <div class="view-header-actions">
+            <div class="filter-tabs-bar">
+              <button class="tab-pill active" onclick="filterTapeChart('all', this)">جميع الفئات (48)</button>
+              <button class="tab-pill" onclick="filterTapeChart('single', this)">فردية كلاسيك (12)</button>
+              <button class="tab-pill" onclick="filterTapeChart('double', this)">مزدوجة ديلوكس (24)</button>
+              <button class="tab-pill" onclick="filterTapeChart('suite', this)">أجنحة رويال (12)</button>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span data-i18n="btnNewBooking">حجز جديد</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tape Chart / Room Timeline Card -->
+        <div class="glass-card tape-chart-card">
+          <div class="card-header" style="flex-wrap: wrap; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <h3 class="card-title" id="tapeChartTitle">مخطط إشغال الغرف التفاعلي</h3>
+              <span id="tapeWeekBadge" class="table-badge badge-deposit">24 أكتوبر - 30 أكتوبر 2026 (الأسبوع الحالي)</span>
+            </div>
+            <div class="tape-nav-controls">
+              <button class="pill-button" id="tapePrevWeekBtn" onclick="prevTapeChartWeek()" title="الأسبوع السابق" style="cursor: pointer;">
+                &rarr; <span data-i18n="btnPrevWeek">الأسبوع السابق</span>
+              </button>
+              <button class="pill-button" id="tapeCurrentWeekBtn" onclick="resetTapeChartWeek()" title="العودة للأسبوع الحالي" style="display: none; cursor: pointer;">
+                <span data-i18n="btnCurrentWeek">الأسبوع الحالي</span>
+              </button>
+              <button class="pill-button active-toggle" id="tapeNextWeekBtn" onclick="nextTapeChartWeek()" title="الأسبوع التالي" style="cursor: pointer; font-weight: 700;">
+                <span data-i18n="btnNextWeek">الأسبوع التالي</span> &larr;
+              </button>
+            </div>
+          </div>
+          <div class="tape-grid-wrapper" id="tapeChartContainer">
+            <!-- Rendered dynamically by renderTapeChart() -->
+          </div>
+        </div>
+
+        <!-- Bookings Data Table -->
+        <div class="glass-card">
+          <div class="card-header" style="flex-wrap: wrap; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <h3 class="card-title">سجل الحجوزات النشطة والواردة</h3>
+              <span id="bookingsCountBadge" class="table-badge badge-paid">4 حجوزات</span>
+            </div>
+            <button class="pill-button active-toggle" onclick="exportBookingsExcel()" id="btnExportBookingsExcel" style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span data-i18n="btnExportExcel">تصدير الكشف (Excel)</span>
+            </button>
+          </div>
+          <div class="table-responsive-wrap">
+            <table class="glass-table">
+              <thead>
+                <tr>
+                  <th>رقم الحجز</th>
+                  <th>اسم النزيل</th>
+                  <th>فئة الغرفة</th>
+                  <th>الوصول</th>
+                  <th>المغادرة</th>
+                  <th>الإجمالي</th>
+                  <th>حالة السداد</th>
+                  <th>الإجراء</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- Rendered dynamically by renderBookingsTable() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 3: STAFF ATTENDANCE (سجل الحضور والمناوبة)
+           ==================================================================== -->
+      <section id="view-attendance" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="attendanceTitle">سجل الحضور وإدارة المناوبات (Staff & Shifts)</h2>
+            <p data-i18n="attendanceSubtitle">متابعة حضور موظفي الاستقبال والتدبير الفندقي ومناوبات العمل</p>
+          </div>
+          <div class="view-header-actions">
+            <button type="button" class="btn-primary" id="btnRecordAttendance" onclick="openAttendanceModal()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>تسجيل حركة حضور</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Shift Overview Summary Cards -->
+        <div class="shifts-summary-grid">
+          <div class="shift-card" id="shiftCardMorning" onclick="filterStaffShift('morning', this)" title="انقر لتصفية طاقم مناوبة الصباح">
+            <div class="shift-icon-box" style="background: rgba(56, 189, 248, 0.15); color: #0284C7;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+              </svg>
+            </div>
+            <div class="shift-info">
+              <h4>مناوبة الصباح (Morning)</h4>
+              <p>07:00 ص - 03:00 م</p>
+            </div>
+            <div class="shift-count-badge" id="shiftMorningCount">10</div>
+          </div>
+
+          <div class="shift-card" id="shiftCardEvening" onclick="filterStaffShift('evening', this)" title="انقر لتصفية طاقم مناوبة المساء">
+            <div class="shift-icon-box" style="background: rgba(251, 146, 60, 0.15); color: #D97706;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 18a5 5 0 0 0-10 0"></path>
+                <line x1="12" y1="2" x2="12" y2="9"></line>
+                <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"></line>
+                <line x1="1" y1="18" x2="3" y2="18"></line>
+                <line x1="21" y1="18" x2="23" y2="18"></line>
+                <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"></line>
+              </svg>
+            </div>
+            <div class="shift-info">
+              <h4>مناوبة المساء (Evening)</h4>
+              <p>03:00 م - 11:00 م</p>
+            </div>
+            <div class="shift-count-badge" id="shiftEveningCount">6</div>
+          </div>
+
+          <div class="shift-card" id="shiftCardNight" onclick="filterStaffShift('night', this)" title="انقر لتصفية طاقم مناوبة الليل">
+            <div class="shift-icon-box" style="background: rgba(139, 92, 246, 0.15); color: #7C3AED;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </div>
+            <div class="shift-info">
+              <h4>مناوبة الليل (Night Audit)</h4>
+              <p>11:00 م - 07:00 ص</p>
+            </div>
+            <div class="shift-count-badge" id="shiftNightCount">2</div>
+          </div>
+        </div>
+
+        <!-- Staff List Table -->
+        <div class="glass-card">
+          <div class="card-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <h3 class="card-title">طاقم الفندق المناوب اليوم</h3>
+              <span id="staffFilterBadge" class="table-badge badge-deposit" style="display:none;">تصفية محددة</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button type="button" id="btnResetStaffFilter" class="pill-button" onclick="resetStaffFilter()" style="display:none; font-size:0.75rem;">عرض كافة المناوبات</button>
+              <button type="button" class="card-action-link" style="background:none; border:none; cursor:pointer;" onclick="openPreviousMonthAttendanceModal()">سجل الشهر السابق</button>
+            </div>
+          </div>
+          <div class="table-responsive-wrap">
+            <table class="glass-table">
+              <thead>
+                <tr>
+                  <th>الموظف</th>
+                  <th>القسم / المسمى الوظيفي</th>
+                  <th>المناوبة</th>
+                  <th>تسجيل الدخول</th>
+                  <th>الحالة</th>
+                  <th>الإجراء</th>
+                </tr>
+              </thead>
+              <tbody id="staffTableBody">
+                <!-- Dynamically rendered via renderStaffTable() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Handover Logbook -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h3 class="card-title">دفتر تسليم المناوبة الرقمي (Front Desk Handover Log)</h3>
+            <button type="button" class="btn-primary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="saveHandoverNote()">حفظ الملاحظة</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group-full">
+              <div style="display: flex; gap: 10px;">
+                <input type="text" id="handoverNoteInput" class="form-input" style="flex: 1;" placeholder="اكتب توجيهاً للمناوبة القادمة (مثال: جناح 402 طلب باقة ورود ترحيبية الساعة 03:00 م)..." onkeydown="if(event.key === 'Enter') saveHandoverNote()">
+                <button type="button" class="btn-primary" onclick="saveHandoverNote()">إضافة للمفكرة</button>
+              </div>
+            </div>
+          </div>
+          <!-- Logbook List -->
+          <div class="handover-notes-list" id="handoverNotesContainer">
+            <!-- Dynamically populated via renderHandoverNotes() -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW: STAFF & HR MANAGEMENT (إدارة شؤون الموظفين وفريق العمل)
+           ==================================================================== -->
+      <section id="view-staff" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="staffManagementTitle">إدارة شؤون الموظفين وفريق العمل (Staff & HR)</h2>
+            <p data-i18n="staffManagementSubtitle">دليل الموظفين الشامل، عقود العمل، الرواتب وتوزيع الأقسام التشغيلية</p>
+          </div>
+          <div class="view-header-actions">
+            <button type="button" class="pill-button" onclick="exportStaffDirectoryCSV()" title="تصدير كشف الموظفين بصيغة Excel / CSV">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>تصدير الكشف (Excel)</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="printStaffDirectory()" title="طباعة كشف الكادر الفندقي">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>طباعة الكشف</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="openPayrollModal()" title="فتح مسير الرواتب والمستحقات">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <span>كشف الرواتب</span>
+            </button>
+            <button type="button" class="btn-primary" onclick="openAddEmployeeModal()" title="إضافة وتعيين موظف جديد">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>إضافة موظف جديد +</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Interactive KPI Summary Cards (Acting as Quick Filter & Action Shortcuts) -->
+        <div class="staff-stats-grid">
+          <div class="staff-stats-card" id="kpiTotalStaffCard" onclick="filterStaffDepartment('all')" style="cursor: pointer;" title="انقر لعرض كافة موظفي الفندق وإلغاء التصفية">
+            <div class="staff-stats-icon" style="background: rgba(139, 92, 246, 0.15); color: #7C3AED;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="staff-stats-content">
+              <div class="title">إجمالي الكادر الفندقي</div>
+              <div class="value" id="kpiTotalStaff">9 موظفين</div>
+              <div class="subtext">4 أقسام فندقية متكاملة • انقر للعرض</div>
+            </div>
+          </div>
+
+          <div class="staff-stats-card" id="kpiOnDutyStaffCard" onclick="filterStaffByDutyStatus('duty')" style="cursor: pointer;" title="انقر لتصفية الموظفين المتواجدين على رأس العمل حالياً">
+            <div class="staff-stats-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="staff-stats-content">
+              <div class="title">على رأس العمل الآن</div>
+              <div class="value" id="kpiOnDutyStaff" style="color: #059669;">7 موظفين</div>
+              <div class="subtext" id="kpiOnDutySubtext">جاهزية تشغيلية بنسبة 78% • تصفية فورية</div>
+            </div>
+          </div>
+
+          <div class="staff-stats-card" id="kpiPayrollTotalCard" onclick="openPayrollModal()" style="cursor: pointer;" title="انقر لفتح مسير الرواتب المعتمد لشهر ديسمبر">
+            <div class="staff-stats-icon" style="background: rgba(251, 146, 60, 0.15); color: #D97706;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div class="staff-stats-content">
+              <div class="title">إجمالي مسير الرواتب</div>
+              <div class="value" id="kpiPayrollTotal">$7,250</div>
+              <div class="subtext">ميزانية معتمدة • انقر للمسير المالي</div>
+            </div>
+          </div>
+
+          <div class="staff-stats-card" id="kpiStaffRatingCard" onclick="openPreviousMonthAttendanceModal()" style="cursor: pointer;" title="انقر للاطلاع على سجل الحضور والانضباط الشهري">
+            <div class="staff-stats-icon" style="background: rgba(56, 189, 248, 0.15); color: #0284C7;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="staff-stats-content">
+              <div class="title">معدل الانضباط والتقييم</div>
+              <div class="value" id="kpiStaffRating" style="color: #7C3AED;">98.6%</div>
+              <div class="subtext">أداء ممتاز • انقر لسجل التقييم</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls Bar -->
+        <div class="staff-controls-bar">
+          <div class="staff-dept-filters" id="staffDeptFilters">
+            <button type="button" class="staff-dept-btn active" id="deptFilterAll" onclick="filterStaffDepartment('all', this)">الكل (9)</button>
+            <button type="button" class="staff-dept-btn" id="deptFilterReception" onclick="filterStaffDepartment('قسم الاستقبال', this)">الاستقبال (3)</button>
+            <button type="button" class="staff-dept-btn" id="deptFilterHousekeeping" onclick="filterStaffDepartment('التدبير الفندقي', this)">التدبير الفندقي (3)</button>
+            <button type="button" class="staff-dept-btn" id="deptFilterMaint" onclick="filterStaffDepartment('قسم الصيانة', this)">الصيانة (1)</button>
+            <button type="button" class="staff-dept-btn" id="deptFilterManagement" onclick="filterStaffDepartment('إدارة', this)">الإدارة والمحاسبة (2)</button>
+            <button type="button" id="btnResetStaffManagementFilter" class="pill-button" onclick="resetStaffManagementFilters()" style="display: none; padding: 5px 12px; font-size: 0.78rem;" title="إلغاء التصفية وإعادة ضبط العرض">
+              <span>✕ إلغاء التصفية</span>
+            </button>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="position: relative; display: flex; align-items: center;">
+              <input type="text" id="staffDirSearchInput" class="form-input" style="padding: 7px 14px; font-size: 0.85rem; width: 230px;" placeholder="ابحث باسم الموظف أو وظيفته..." oninput="searchStaffDirectory(this.value)">
+              <button type="button" id="btnClearStaffSearch" onclick="clearStaffSearch()" style="position: absolute; left: 8px; background: none; border: none; color: #94A3B8; cursor: pointer; display: none; font-size: 0.9rem;" title="مسح البحث">&times;</button>
+            </div>
+            <button type="button" class="pill-button" id="btnToggleStaffViewMode" onclick="toggleStaffViewMode()" title="تبديل طريقة العرض (بطاقات / جدول)">
+              <span id="staffViewModeText">☰ جدول تفصيلي</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Staff Cards Grid Container -->
+        <div class="staff-cards-grid" id="staffCardsGrid">
+          <!-- Dynamically populated via renderStaffManagementCards() -->
+        </div>
+
+        <!-- Detailed Staff Table View Container (Toggleable) -->
+        <div class="glass-card" id="staffTableViewCard" style="display: none; margin-bottom: 24px;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">جدول بيانات الموظفين والعقود</h3>
+              <p style="font-size: 0.78rem; color: #64748B; margin: 0;">كافة التفاصيل الوظيفية والمالية مع إمكانية التعديل السريع</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button type="button" class="pill-button" onclick="exportStaffDirectoryCSV()">تصدير Excel</button>
+              <button type="button" class="pill-button" onclick="printStaffDirectory()">طباعة السجل</button>
+            </div>
+          </div>
+          <div class="table-responsive-wrap">
+            <table class="glass-table">
+              <thead>
+                <tr>
+                  <th>كود الموظف</th>
+                  <th>الاسم الكامل</th>
+                  <th>القسم / المنصب</th>
+                  <th>المناوبة</th>
+                  <th>الراتب الشهري</th>
+                  <th>الحالة</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="staffDirectoryTableBody">
+                <!-- Dynamically populated via renderStaffManagementTable() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 4: HOUSEKEEPING & MAINTENANCE (التدبير والصيانة)
+           ==================================================================== -->
+      <section id="view-housekeeping" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="housekeepingTitle">لوحة التدبير الفندقي والصيانة (Kanban Board)</h2>
+            <p data-i18n="housekeepingSubtitle">متابعة حالة نظافة الغرف وجدول التفتيش وإصلاح الأعطال فوراً</p>
+          </div>
+          <div class="view-header-actions">
+            <button class="pill-button" onclick="renderKanbanBoard(); showToast('تم تحديث حالات النظافة بنجاح')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              <span>تحديث فوري</span>
+            </button>
+            <button class="btn-primary" onclick="showToast('طلب صيانة طارئة: تم إخطار فريق الصيانة')">
+              <span>طلب صيانة طارئة +</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4-Column Interactive Kanban Board -->
+        <div class="kanban-board-grid" id="kanbanBoard">
+          <!-- Dynamically filled with interactive cards via JS -->
+        </div>
+
+        <!-- Maintenance & Lost and Found Tables -->
+        <div class="dual-stats-row">
+          <!-- Maintenance Tickets -->
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">تذاكر الصيانة النشطة</h3>
+              <span class="card-action-link" onclick="showToast('فتح سجل الصيانة الشامل')">سجل الأعطال</span>
+            </div>
+            <table class="glass-table">
+              <thead>
+                <tr>
+                  <th>الغرفة</th>
+                  <th>نوع العطل</th>
+                  <th>الأولوية</th>
+                  <th>الإجراء</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>غرفة 203</strong></td>
+                  <td>منظم التكييف بحاجة لمعايرة</td>
+                  <td><span class="table-badge badge-pending">طوارئ</span></td>
+                  <td><button class="pill-button" onclick="showToast('تم إنهاء صيانة الغرفة 203 وإعادتها للخدمة')">إصلاح</button></td>
+                </tr>
+                <tr>
+                  <td><strong>غرفة 108</strong></td>
+                  <td>فحص بطارية القفل الذكي</td>
+                  <td><span class="table-badge badge-deposit">عادي</span></td>
+                  <td><button class="pill-button" onclick="showToast('تم استبدال البطارية بنجاح')">إصلاح</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Lost and Found -->
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">سجل المفقودات (Lost & Found)</h3>
+              <span class="card-action-link" onclick="showToast('إضافة غرض مفقود جديد')">تسجيل غرض</span>
+            </div>
+            <table class="glass-table">
+              <thead>
+                <tr>
+                  <th>الغرفة</th>
+                  <th>الغرض المتروك</th>
+                  <th>التاريخ</th>
+                  <th>الحالة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>غرفة 102</strong></td>
+                  <td>ساعة يد كلاسيك فضية</td>
+                  <td>23 أكتوبر</td>
+                  <td><span class="table-badge badge-deposit">في الأمانات</span></td>
+                </tr>
+                <tr>
+                  <td><strong>غرفة 201</strong></td>
+                  <td>شاحن حاسوب محمول أصلي</td>
+                  <td>24 أكتوبر</td>
+                  <td><span class="table-badge badge-paid">تم التسليم</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 5: REPORTS & ANALYTICS (التقارير والتحليلات)
+           ==================================================================== -->
+      <section id="view-analytics" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="analyticsTitle">التقارير والمؤشرات الفندقية (Hotel BI & Analytics)</h2>
+            <p data-i18n="analyticsSubtitle">مؤشرات الأداء العالمية (Occupancy Rate, ADR, RevPAR) ومصادر الدخل</p>
+          </div>
+          <div class="view-header-actions">
+            <select class="chart-pill-select" onchange="showToast('تم تحديث نطاق التقرير')">
+              <option>الشهر الحالي (أكتوبر 2026)</option>
+              <option>الربع الثالث 2026</option>
+              <option>السنة الحالية كاملة</option>
+            </select>
+            <button class="btn-primary" onclick="showToast('جارٍ تصدير تقرير الإيرادات الفندقية بصيغة PDF...')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>تصدير PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Top Analytics KPI Cards -->
+        <div class="analytics-metrics-grid">
+          <div class="analytic-card">
+            <div class="label">نسبة الإشغال العام (Occupancy)</div>
+            <div class="value">79.2%</div>
+            <div class="trend">+4.2% مقارنة بالشهر السابق</div>
+          </div>
+          <div class="analytic-card">
+            <div class="label">متوسط سعر الغرفة (ADR)</div>
+            <div class="value" id="analyticsAdrVal">$145</div>
+            <div class="trend">+8.1% نمو الأسعار</div>
+          </div>
+          <div class="analytic-card">
+            <div class="label">الإيراد لكل غرفة متاحة (RevPAR)</div>
+            <div class="value" id="analyticsRevparVal">$114.8</div>
+            <div class="trend">+6.5% مؤشر قياسي</div>
+          </div>
+          <div class="analytic-card">
+            <div class="label">إجمالي الإيرادات الشهرية</div>
+            <div class="value" id="analyticsTotalRev">$84,200</div>
+            <div class="trend">+12.4% أداء استثنائي</div>
+          </div>
+        </div>
+
+        <!-- Revenue Breakdown & Booking Channels -->
+        <div class="dual-stats-row">
+          <!-- Revenue Breakdown -->
+          <div class="glass-card revenue-breakdown-card">
+            <div class="card-header">
+              <h3 class="card-title">توزيع مصادر الإيرادات التشغيلية</h3>
+              <span class="card-action-link">تفصيل المراكز</span>
+            </div>
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>إيرادات حجز الغرف والأجنحة</span>
+                <span style="font-weight: 800; color: #7C3AED;">72%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 72%; background: linear-gradient(90deg, #8B5CF6, #A78BFA);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>المطاعم والخدمات والغرف (F&B)</span>
+                <span style="font-weight: 800; color: #0284C7;">16%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 16%; background: linear-gradient(90deg, #0EA5E9, #38BDF8);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>المغسلة والخدمات السريعة</span>
+                <span style="font-weight: 800; color: #059669;">7%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 7%; background: linear-gradient(90deg, #10B981, #34D399);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>قاعات الاجتماعات والفعاليات</span>
+                <span style="font-weight: 800; color: #D97706;">5%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 5%; background: linear-gradient(90deg, #F59E0B, #FB923C);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Channels Breakdown -->
+          <div class="glass-card revenue-breakdown-card">
+            <div class="card-header">
+              <h3 class="card-title">قنوات تدفق الحجوزات (Channels)</h3>
+              <span class="card-action-link">معدل العمولة</span>
+            </div>
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>محرك الحجز المباشر عبر الموقع (0% عمولة)</span>
+                <span style="font-weight: 800; color: #059669;">45%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 45%; background: linear-gradient(90deg, #10B981, #34D399);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>الاستقبال المباشر (Walk-in)</span>
+                <span style="font-weight: 800; color: #7C3AED;">25%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 25%; background: linear-gradient(90deg, #8B5CF6, #A78BFA);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>حجوزات الشركات والجهات المتعاقدة</span>
+                <span style="font-weight: 800; color: #0284C7;">20%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 20%; background: linear-gradient(90deg, #0EA5E9, #38BDF8);"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-header">
+                <span>وكالات السفر عبر الإنترنت (OTAs)</span>
+                <span style="font-weight: 800; color: #D97706;">10%</span>
+              </div>
+              <div class="breakdown-bar-track">
+                <div class="breakdown-bar-fill" style="width: 10%; background: linear-gradient(90deg, #F59E0B, #FB923C);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 6: SYSTEM SETTINGS (إعدادات النظام والسياسات)
+           ==================================================================== -->
+      <section id="view-settings" class="app-view">
+        <div class="view-header-bar">
+          <div class="view-header-title">
+            <h2 data-i18n="settingsTitle">إعدادات المنظومة والفندق (System Configuration)</h2>
+            <p data-i18n="settingsSubtitle">إدارة بيانات الفندق، سياسات التسعير، أسعار الصرف، وأتمتة الإقفال اليومي</p>
+          </div>
+          <div class="view-header-actions">
+            <button class="btn-primary" onclick="saveSystemSettings()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+              </svg>
+              <span>حفظ الإعدادات</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <!-- Manager Profile Settings Card -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <h3>بيانات المدير والحساب (Administrator Profile)</h3>
+                  <p>تعديل اسم المدير المسؤول، الرتبة الإدارية، والبريد الإلكتروني المعتمد</p>
+                </div>
+                <div class="profile-avatar-icon" style="width: 44px; height: 44px;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="settings-form-col">
+              <div>
+                <label class="form-label">اسم المدير الكامل</label>
+                <input type="text" class="form-input" id="settingManagerNameInput" value="سارة المنصور" placeholder="أدخل اسم المدير...">
+              </div>
+              <div class="form-grid">
+                <div>
+                  <label class="form-label">المسمى الوظيفي</label>
+                  <input type="text" class="form-input" id="settingManagerRoleInput" value="مدير العمليات">
+                </div>
+                <div>
+                  <label class="form-label">البريد الإلكتروني المهني</label>
+                  <input type="email" class="form-input" id="settingManagerEmailInput" value="sarah.mansoor@grandstay.com">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel Profile -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3>البيانات الأساسية للفندق</h3>
+              <p>اسم الفندق، الموقع، وساعات التسكين والمغادرة المعتمدة</p>
+            </div>
+            <div class="settings-form-col">
+              <div>
+                <label class="form-label">اسم الفندق الرسمي</label>
+                <input type="text" class="form-input" id="settingHotelName" value="فندق جراند ستاي الفاخر (GrandStay Luxury Hotel)">
+              </div>
+              <div class="form-grid">
+                <div>
+                  <label class="form-label">وقت تسجيل الوصول (Check-in)</label>
+                  <input type="time" class="form-input" value="14:00">
+                </div>
+                <div>
+                  <label class="form-label">وقت تسجيل المغادرة (Check-out)</label>
+                  <input type="time" class="form-input" value="12:00">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Currency & Financial Rules -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3>السياسات المالية وتعدد العملات</h3>
+              <p>سعر صرف الدولار مقابل الدينار واحتساب الضرائب</p>
+            </div>
+            <div class="settings-form-col">
+              <div>
+                <label class="form-label">سعر صرف الدولار مقابل الدينار (IQD / USD)</label>
+                <input type="number" class="form-input" id="settingExchangeRate" value="1310" style="font-weight: 800; color: #7C3AED;">
+                <small style="color: var(--text-muted); font-size: 0.76rem; display: block; margin-top: 4px;">تعديل هذا السعر يعيد احتساب جميع الفواتير والإيرادات فورياً عبر النظام</small>
+              </div>
+              <div class="form-grid">
+                <div>
+                  <label class="form-label">ضريبة القيمة المضافة / السياحة (%)</label>
+                  <input type="number" class="form-input" value="10">
+                </div>
+                <div>
+                  <label class="form-label">رسوم الخدمة (%)</label>
+                  <input type="number" class="form-input" value="5">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Pricing & Weekend Rules -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3>التسعير الديناميكي والعروض</h3>
+              <p>زيادة عطل نهاية الأسبوع وخصومات الإقامة الممتدة</p>
+            </div>
+            <div class="settings-form-col">
+              <div class="toggle-row">
+                <div class="switch-label">
+                  <span class="switch-title">تفعيل تسعير عطلة نهاية الأسبوع (+15%)</span>
+                  <span class="switch-desc">تطبيق زيادة سعرية تلقائية لليالي الخميس والجمعة</span>
+                </div>
+                <input type="checkbox" class="toggle-switch-input" checked>
+              </div>
+
+              <div class="toggle-row">
+                <div class="switch-label">
+                  <span class="switch-title">خصم الإقامة الطويلة (-10%)</span>
+                  <span class="switch-desc">تطبيق خصم تلقائي عند حجز أكثر من 7 ليالٍ متتالية</span>
+                </div>
+                <input type="checkbox" class="toggle-switch-input" checked>
+              </div>
+            </div>
+          </div>
+
+          <!-- Night Audit Automation -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3>أتمتة الإقفال اليومي (Night Audit)</h3>
+              <p>ترحيل رسوم الغرف وتجميد اليوم المالي آلياً</p>
+            </div>
+            <div class="settings-form-col">
+              <div class="toggle-row">
+                <div class="switch-label">
+                  <span class="switch-title">جدولة الإقفال اليومي التلقائي (03:00 ص)</span>
+                  <span class="switch-desc">يقوم النظام بترحيل رسوم الغرف المسكونة وتجميد اليوم المحاسبي</span>
+                </div>
+                <input type="checkbox" class="toggle-switch-input" checked>
+              </div>
+
+              <div class="toggle-row">
+                <div class="switch-label">
+                  <span class="switch-title">إرسال كشف الحساب اليومي للمدير العام عبر البريد</span>
+                  <span class="switch-desc">إرسال ملخص مالي فوري بصيغة PDF بعد انتهاء التدقيق</span>
+                </div>
+                <input type="checkbox" class="toggle-switch-input" checked>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ====================================================================
+       New Reservation Modal (Frosted Glass Dialog)
+       ==================================================================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" data-i18n="modalBookingTitle">إنشاء حجز جديد للنزيل</h3>
+        <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+      </div>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group-full">
+            <label class="form-label" data-i18n="labelGuestName">اسم النزيل الكامل</label>
+            <input type="text" class="form-input" required placeholder="مثال: أحمد عبد الله الهاشمي">
+          </div>
+          <div>
+            <label class="form-label" data-i18n="labelGuestPhone">رقم الهاتف / الواتساب</label>
+            <input type="tel" class="form-input" required placeholder="+964 770 123 4567">
+          </div>
+          <div>
+            <label class="form-label" data-i18n="labelRoomType">فئة الغرفة</label>
+            <select class="form-select" id="bookingRoomType">
+              <option value="single">غرفة فردية كلاسيك ($90 / ليلة)</option>
+              <option value="double" selected>غرفة مزدوجة ديلوكس ($145 / ليلة)</option>
+              <option value="suite">جناح تنفيذي فاخر ($240 / ليلة)</option>
+              <option value="royal">جناح رويال VIP ($450 / ليلة)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" data-i18n="labelCheckInDate">تاريخ الوصول</label>
+            <input type="date" class="form-input" value="2026-10-24">
+          </div>
+          <div>
+            <label class="form-label" data-i18n="labelNights">عدد الليالي</label>
+            <input type="number" class="form-input" id="bookingNights" min="1" max="60" value="3">
+          </div>
+          <div class="form-group-full">
+            <label class="form-label" data-i18n="labelEstimatedTotal">إجمالي التكلفة المقدرة</label>
+            <input type="text" class="form-input" id="bookingTotalCost" readonly style="font-weight: 800; font-size: 1.15rem; background: #FAF5FF; color: #7C3AED;">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="cancelModalBtn" data-i18n="btnCancel">إلغاء</button>
+          <button type="submit" class="btn-primary" data-i18n="btnSaveBooking">تأكيد الحجز وطباعة الإيصال</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Guest Folio & Invoice Modal (الفاتورة الموحدة للنزيل)
+       ==================================================================== -->
+  <div class="modal-overlay" id="folioModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">فاتورة الحساب الموحدة (Guest Folio & Tax Invoice)</h3>
+        <button class="modal-close-btn" onclick="closeModal('folioModal')">&times;</button>
+      </div>
+      <div class="folio-receipt-box" id="folioPrintableArea">
+        <div class="folio-receipt-header">
+          <div>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: #1E293B;">فندق جراند ستاي الفاخر</h2>
+            <p style="font-size: 0.82rem; color: #64748B;">بغداد - شارع الوزراء • هاتف: +964 770 000 1122</p>
+            <p style="font-size: 0.8rem; color: #7C3AED; font-weight: 700; margin-top: 4px;">الرقم الضريبي: TRN-9982410-IQ</p>
+          </div>
+          <div style="text-align: end;">
+            <div style="font-size: 1.1rem; font-weight: 800; color: #7C3AED;">فاتورة رقم: #INV-2026-9104</div>
+            <p style="font-size: 0.82rem; color: #64748B;">التاريخ: 24 أكتوبر 2026</p>
+            <span class="table-badge badge-paid">حالة الفاتورة: مسددة بالكامل</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; padding: 12px; background: #F8FAFC; border-radius: 12px;">
+          <div>
+            <div style="font-size: 0.76rem; color: #64748B; font-weight: 600;">اسم النزيل:</div>
+            <div style="font-size: 0.95rem; font-weight: 800;" id="folioGuestName">د. طارق الحكيم</div>
+          </div>
+          <div>
+            <div style="font-size: 0.76rem; color: #64748B; font-weight: 600;">الغرفة وفترة الإقامة:</div>
+            <div style="font-size: 0.95rem; font-weight: 700;" id="folioRoomDates">جناح رويال 301 (24 - 28 أكتوبر • 4 ليالٍ)</div>
+          </div>
+        </div>
+
+        <table class="folio-charges-table">
+          <thead>
+            <tr>
+              <th style="text-align: start;">البند / الخدمة</th>
+              <th style="text-align: center;">الكمية / الليالي</th>
+              <th style="text-align: end;">السعر المفرد</th>
+              <th style="text-align: end;">الإجمالي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>إقامة جناح رويال فاخر (Royal Suite)</td>
+              <td style="text-align: center;">4 ليالٍ</td>
+              <td style="text-align: end;">$450.00</td>
+              <td style="text-align: end; font-weight: 700;">$1,800.00</td>
+            </tr>
+            <tr>
+              <td>خدمة الغرف والمطعم الإيطالي (Room Service)</td>
+              <td style="text-align: center;">1</td>
+              <td style="text-align: end;">$120.00</td>
+              <td style="text-align: end; font-weight: 700;">$120.00</td>
+            </tr>
+            <tr>
+              <td>خدمة غسيل وكي مستعجل (Laundry)</td>
+              <td style="text-align: center;">1</td>
+              <td style="text-align: end;">$35.00</td>
+              <td style="text-align: end; font-weight: 700;">$35.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="folio-totals-summary">
+          <div class="folio-totals-row">
+            <span>المجموع الفرعي (Subtotal):</span>
+            <span style="font-weight: 700;">$1,955.00</span>
+          </div>
+          <div class="folio-totals-row">
+            <span>ضريبة السياحة والقيمة المضافة (10%):</span>
+            <span>$195.50</span>
+          </div>
+          <div class="folio-totals-row">
+            <span>رسوم الخدمة الفندقية (5%):</span>
+            <span>$97.75</span>
+          </div>
+          <div class="folio-totals-row grand-total">
+            <span>الإجمالي النهائي المستحق:</span>
+            <div style="text-align: end;">
+              <div>$2,248.25 USD</div>
+              <div style="font-size: 0.9rem; color: #64748B; font-weight: 600;">(ما يعادل: 2,945,200 د.ع عراقي)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('folioModal')">إغلاق</button>
+        <button type="button" class="btn-primary" onclick="printGuestInvoice()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>طباعة الفاتورة الرسمية</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Key Card RFID Encoder Modal (تشفير بطاقة المفتاح الذكية)
+       ==================================================================== -->
+  <div class="modal-overlay" id="keyCardModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">إصدار وتشفير بطاقة المفتاح الذكية (RFID Key Encoder)</h3>
+        <button class="modal-close-btn" onclick="closeModal('keyCardModal')">&times;</button>
+      </div>
+      
+      <!-- Visual RFID Card Graphic -->
+      <div class="rfid-key-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.85rem; font-weight: 700; opacity: 0.85;">GRANDSTAY HOTEL KEY</span>
+          <div class="rfid-chip"></div>
+        </div>
+        <div class="rfid-room-info">
+          <div>
+            <div style="font-size: 0.72rem; opacity: 0.7;">ROOM NUMBER</div>
+            <div class="rfid-room-num" id="keyCardRoomDisplay">202</div>
+          </div>
+          <div style="text-align: end;">
+            <div style="font-size: 0.72rem; opacity: 0.7;">VALID THRU</div>
+            <div style="font-weight: 700; font-size: 0.95rem;">29 OCT 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div>
+          <label class="form-label">رقم الغرفة</label>
+          <input type="text" class="form-input" id="keyCardRoomInput" value="202" readonly>
+        </div>
+        <div>
+          <label class="form-label">رمز الدخول الرقمي (PIN)</label>
+          <input type="text" class="form-input" value="8492" readonly style="font-weight: 800; color: #7C3AED; letter-spacing: 2px;">
+        </div>
+        <div class="form-group-full">
+          <label class="form-label">صلاحيات إضافية بالبطاقة</label>
+          <div style="display: flex; gap: 14px; margin-top: 6px;">
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem;">
+              <input type="checkbox" checked> مصعد الطوابق الخاصة
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem;">
+              <input type="checkbox" checked> النادي الصحي والمسبح
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem;">
+              <input type="checkbox"> صالة رجال الأعمال
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('keyCardModal')">إلغاء</button>
+        <button type="button" class="btn-primary" onclick="encodeRfidKey()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"></path><circle cx="16.5" cy="7.5" r=".5"></circle></svg>
+          <span>تشفير وإصدار البطاقة الآن</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       VIP Amenities Preparation Modal (تجهيز خدمات كبار الشخصيات)
+       ==================================================================== -->
+  <div class="modal-overlay" id="vipModal">
+    <div class="modal-dialog vip-modal-dialog">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title" data-i18n="vipModalTitle">تجهيز ومتابعة خدمات النزيل المميز (VIP Arrival)</h3>
+          <span id="vipSuiteStatusBadge" class="vip-status-badge status-pending">وصول اليوم</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('vipModal')">&times;</button>
+      </div>
+
+      <!-- VIP Guest Card Header inside Modal -->
+      <div class="vip-modal-guest-box">
+        <div class="vip-avatar-wrap" style="width: 56px; height: 56px; margin-bottom: 0; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);">
+          <img src="assets/images/vip_guest.jpg" alt="VIP" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-heading);">د. طارق الحكيم</h4>
+            <span class="vip-badge-pill" style="font-size: 0.7rem; padding: 2px 10px;">VIP Platinum</span>
+          </div>
+          <p style="font-size: 0.8rem; color: #64748B; margin-top: 3px;">
+            جناح الرويال الفاخر 402 • حجز مؤكد #BK-9104 • وصول متوقع 14:00 اليوم
+          </p>
+        </div>
+      </div>
+
+      <!-- Live Checklist Progress Bar -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: #475569;">
+        <span>قائمة جاهزية الخدمات الملكية</span>
+        <span id="vipChecklistCount">5 / 5 جاهزة</span>
+      </div>
+      <div class="vip-progress-wrap">
+        <div class="vip-progress-bar" id="vipProgressBar" style="width: 100%;"></div>
+      </div>
+
+      <!-- Checklist Items -->
+      <div style="display: flex; flex-direction: column; gap: 9px;" id="vipChecklistItems">
+        <label class="vip-check-item">
+          <input type="checkbox" checked class="vip-checkbox" onchange="updateVipChecklistProgress()">
+          <div>
+            <strong>سلة ضيافة ملكية (فواكه استوائية وحلويات فاخرة)</strong>
+            <span>تجهيز مسبق مباشر من قسم الأغذية والمشروبات (F&B)</span>
+          </div>
+        </label>
+
+        <label class="vip-check-item">
+          <input type="checkbox" checked class="vip-checkbox" onchange="updateVipChecklistProgress()">
+          <div>
+            <strong>استقبال ونقل خاص بسيارة الفندق من المطار</strong>
+            <span>السائق المخصص: حسن كريم (Mercedes S-Class 2026)</span>
+          </div>
+        </label>
+
+        <label class="vip-check-item">
+          <input type="checkbox" checked class="vip-checkbox" onchange="updateVipChecklistProgress()">
+          <div>
+            <strong>تسجيل وصول سريع وفوري داخل الجناح (In-Suite Express Check-in)</strong>
+            <span>تسليم المفتاح والضيافة دون الحاجة للتوقف عند مكتب الاستقبال</span>
+          </div>
+        </label>
+
+        <label class="vip-check-item">
+          <input type="checkbox" checked class="vip-checkbox" onchange="updateVipChecklistProgress()">
+          <div>
+            <strong>إتاحة الدخول الكامل لصالة رجال الأعمال التنفيذية</strong>
+            <span>تفعيل الصلاحية على البطاقة الذكية وقاعة الاجتماعات المصغرة</span>
+          </div>
+        </label>
+
+        <label class="vip-check-item">
+          <input type="checkbox" checked class="vip-checkbox" onchange="updateVipChecklistProgress()">
+          <div>
+            <strong>تخصيص مساعد شخصي (Butler Service) على مدار الساعة</strong>
+            <span>لإدارة الأمتعة وخدمة الغرف وطلبات الكونسيرج الفورية</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Quick Action Shortcuts -->
+      <div class="vip-modal-quick-actions">
+        <button type="button" class="vip-quick-btn" onclick="openKeyCardEncoder('402')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          <span>برمجة مفتاح الغرفة 402</span>
+        </button>
+        <button type="button" class="vip-quick-btn" onclick="openGuestFolio('د. طارق الحكيم', 'جناح الرويال الفاخر 402', 1800, 'BK-9104')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>عرض الفاتورة والحجز</span>
+        </button>
+        <button type="button" class="vip-quick-btn" id="vipResetBtn" style="display:none;" onclick="resetVipStatus()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          <span>إعادة ضبط الحالة</span>
+        </button>
+      </div>
+
+      <!-- Modal Footer with Actions -->
+      <div class="modal-footer" style="margin-top: 18px;">
+        <button type="button" class="btn-secondary" onclick="closeModal('vipModal')">إغلاق</button>
+        <button type="button" class="btn-secondary" id="btnVipCheckInNow" style="border-color: #8B5CF6; color: #7C3AED; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;" onclick="checkInVipGuest()">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>تسجيل وصول النزيل الآن</span>
+        </button>
+        <button type="button" class="btn-primary" id="btnVipConfirmPrepare" onclick="confirmVipAmenities()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>تأكيد التجهيز وإشعار الكونسيرج</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Emergency Maintenance Modal (طلب صيانة طارئة)
+       ==================================================================== -->
+  <div class="modal-overlay" id="maintenanceModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">إنشاء طلب صيانة فندقية طارئة</h3>
+        <button class="modal-close-btn" onclick="closeModal('maintenanceModal')">&times;</button>
+      </div>
+      <form id="maintenanceForm" onsubmit="submitMaintenanceRequest(event)">
+        <div class="form-grid">
+          <div>
+            <label class="form-label">رقم الغرفة أو الموقع</label>
+            <select class="form-select" id="maintRoomSelect">
+              <option value="101">غرفة 101</option>
+              <option value="102">غرفة 102</option>
+              <option value="103">غرفة 103</option>
+              <option value="201">غرفة 201</option>
+              <option value="202">غرفة 202</option>
+              <option value="203" selected>غرفة 203</option>
+              <option value="301">غرفة 301</option>
+              <option value="302">غرفة 302</option>
+              <option value="lobby">بهو الفندق الرئيسي</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">فئة العطل</label>
+            <select class="form-select">
+              <option>تكييف وتهوية (HVAC)</option>
+              <option>كهرباء وإنارة</option>
+              <option>سباكة وصرف صحي</option>
+              <option>القفل الذكي والأبواب</option>
+              <option>تلفاز وشبكة واي فاي</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">درجة الأولوية</label>
+            <select class="form-select">
+              <option value="high">طوارئ قصوى (خلال 30 دقيقة)</option>
+              <option value="normal" selected>عادي (خلال اليوم)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">الفني المسؤول</label>
+            <select class="form-select">
+              <option>أحمد سالم (فني التكييف)</option>
+              <option>كريم جواد (فني كهرباء)</option>
+              <option>سعد عبد الرضا (سباكة)</option>
+            </select>
+          </div>
+          <div class="form-group-full">
+            <label class="form-label">وصف المشكلة بالتحديد</label>
+            <textarea class="form-input" style="height: 80px;" required placeholder="اكتب تفاصيل العطل والملاحظات الفنية بدقة..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('maintenanceModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">إرسال التذكرة لفريق الصيانة</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Attendance Log Modal (تسجيل حركة حضور/انصراف)
+       ==================================================================== -->
+  <!-- ====================================================================
+       Attendance Log Modal (تسجيل حركة حضور/انصراف)
+       ==================================================================== -->
+  <div class="modal-overlay" id="attendanceModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">تسجيل حركة حضور / انصراف موظف</h3>
+        <button class="modal-close-btn" onclick="closeModal('attendanceModal')">&times;</button>
+      </div>
+      <form onsubmit="submitAttendanceRecord(event)">
+        <div class="form-grid">
+          <div class="form-group-full">
+            <label class="form-label">اسم الموظف</label>
+            <select class="form-select" id="attendEmployeeSelect">
+              <option value="ST-02">فهد القحطاني (مشرف استقبال)</option>
+              <option value="ST-03">منى العلي (موظفة استقبال)</option>
+              <option value="ST-04">حيدر كمال (مشرف تدبير فندقي)</option>
+              <option value="ST-05">ليلى ناصر (تدبير فندقي)</option>
+              <option value="ST-06">أحمد سالم (فني صيانة)</option>
+              <option value="ST-07">عمر التميمي (استقبال مسائي)</option>
+              <option value="ST-08">زينب جواد (تدبير مسائي)</option>
+              <option value="ST-09">كرار الدليمي (مدقق ليلي)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">نوع الحركة</label>
+            <select class="form-select" id="attendActionTypeSelect">
+              <option value="checkin">تسجيل حضور (Check-in)</option>
+              <option value="break">خروج لاستراحة (Break)</option>
+              <option value="resume">عودة من استراحة (Resume)</option>
+              <option value="checkout">تسجيل انصراف نهاية المناوبة (Check-out)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">المناوبة</label>
+            <select class="form-select" id="attendShiftTypeSelect">
+              <option value="morning">مناوبة الصباح (07:00 - 15:00)</option>
+              <option value="evening">مناوبة المساء (15:00 - 23:00)</option>
+              <option value="night">مناوبة الليل (23:00 - 07:00)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <div>
+            <button type="button" class="btn-secondary" onclick="quickToggleDutyFromModal()" title="تبديل فوري بين رأس العمل والاستراحة" style="color: #0284C7;">
+              ⚡ تبديل سريع للحالة
+            </button>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn-secondary" onclick="closeModal('attendanceModal')">إلغاء</button>
+            <button type="submit" class="btn-primary">توثيق الحركة في السجل</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Employee Profile Modal (ملف بيانات الموظف)
+       ==================================================================== -->
+  <div class="modal-overlay" id="employeeProfileModal">
+    <div class="modal-dialog modal-lg" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title" id="empModalTitle">ملف بيانات الموظف (Staff Profile)</h3>
+          <span class="table-badge badge-paid" id="empModalDeptBadge">قسم الاستقبال</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('employeeProfileModal')">&times;</button>
+      </div>
+
+      <!-- Profile Header Summary -->
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%); border-radius: 14px; margin-bottom: 18px; border: 1px solid #E2E8F0;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div class="emp-avatar-box" id="empModalAvatar" style="width: 58px; height: 58px; font-size: 1.3rem;">
+            فـق
+            <span class="emp-status-dot duty" id="empModalStatusDot"></span>
+          </div>
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 800; color: #1E293B; margin: 0 0 4px 0;" id="empModalName">فهد القحطاني</h4>
+            <p style="font-size: 0.85rem; color: #64748B; margin: 0;" id="empModalRole">مشرف الاستقبال • قسم خدمات الضيوف</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+          <span class="table-badge badge-paid" id="empModalStatusBadge" style="font-size: 0.82rem; padding: 4px 10px;">على رأس العمل</span>
+          <span style="font-size: 0.72rem; color: #64748B;" id="empModalCheckInTime">دخول: 06:55 ص</span>
+        </div>
+      </div>
+
+      <!-- 8-Field Detailed Grid -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px;">
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">الرقم الوظيفي (Staff ID):</span>
+          <strong style="font-size: 0.92rem; color: #1E293B;" id="empModalId">EMP-2024-02</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">المناوبة المخصصة (Shift):</span>
+          <strong style="font-size: 0.92rem; color: #1E293B;" id="empModalShift">مناوبة الصباح (07:00 - 15:00)</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">الراتب الأساسي المعتمد:</span>
+          <strong style="font-size: 0.95rem; color: #059669;" id="empModalSalary">$850 / شهر</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">رقم الهاتف المباشر:</span>
+          <strong style="font-size: 0.92rem; color: #1E293B;" dir="ltr"><a href="#" id="empModalPhoneLink" style="color: #7C3AED; text-decoration: none;">+964 770 222 3344</a></strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">البريد الإلكتروني المهني:</span>
+          <strong style="font-size: 0.85rem; color: #1E293B;" id="empModalEmail">fahad@grandstay.com</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">نوع العقد وتاريخ التعيين:</span>
+          <strong style="font-size: 0.88rem; color: #1E293B;" id="empModalContract">دوام كامل • منذ 2023-06-15</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">نسبة الانضباط الشهري:</span>
+          <strong style="font-size: 0.92rem; color: #7C3AED;" id="empModalRating">99.2% (أداء ممتاز)</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 12px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block; margin-bottom: 2px;">إجمالي المكافآت التقديرية:</span>
+          <strong style="font-size: 0.92rem; color: #D97706;" id="empModalBonuses">$160 (مكافأتان)</strong>
+        </div>
+      </div>
+
+      <!-- Modal Action Buttons Bar -->
+      <div style="background: #F8FAFC; border-radius: 12px; padding: 14px; border: 1px solid #E2E8F0; margin-bottom: 16px;">
+        <span style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 8px;">إجراءات إدارية مباشرة على ملف الموظف:</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button type="button" class="btn-secondary" style="padding: 7px 14px; font-size: 0.82rem;" onclick="openEditFromProfile()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+            <span>تعديل البيانات</span>
+          </button>
+          <button type="button" class="btn-secondary" style="padding: 7px 14px; font-size: 0.82rem; color: #D97706;" onclick="openBonusFromProfile()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <span>صرف مكافأة</span>
+          </button>
+          <button type="button" class="btn-secondary" id="btnToggleDutyInProfile" style="padding: 7px 14px; font-size: 0.82rem;" onclick="toggleDutyStatusFromProfile()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span id="btnToggleDutyText">تبديل الحالة للاستراحة</span>
+          </button>
+          <button type="button" class="btn-secondary" style="padding: 7px 14px; font-size: 0.82rem;" onclick="printActiveEmployeeCard()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><line x1="15" y1="8" x2="17" y2="8"></line><line x1="15" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+            <span>طباعة بطاقة ID</span>
+          </button>
+          <button type="button" class="btn-secondary" style="padding: 7px 14px; font-size: 0.82rem; color: #DC2626;" onclick="deleteEmployeeFromProfile()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            <span>إنهاء الخدمة</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="margin-top: 10px;">
+        <button type="button" class="btn-secondary" onclick="closeModal('employeeProfileModal')">إغلاق</button>
+        <button type="button" class="btn-primary" onclick="sendDirectInstructionFromProfile()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>إرسال توجيه فوري للموظف</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Assign Housekeeping Tasks Modal (توزيع المهام اليومية)
+       ==================================================================== -->
+  <div class="modal-overlay" id="assignTasksModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">توزيع مهام التدبير الفندقي اليومية (Housekeeping Tasks)</h3>
+        <button class="modal-close-btn" onclick="closeModal('assignTasksModal')">&times;</button>
+      </div>
+      <div style="background: #F8FAFC; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1E293B;">المشرف المسؤول: حيدر كمال</strong>
+          <span class="table-badge badge-paid">مناوبة الصباح</span>
+        </div>
+        <p style="font-size: 0.8rem; color: #64748B;">توزيع الغرف الشاغرة المتسخة وغرف المغادرة على طاقم النظافة.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+        <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: white; border: 1px solid #E2E8F0; border-radius: 10px; cursor: pointer;">
+          <div>
+            <strong style="font-size: 0.88rem; display: block;">الطابق الأول (غرف 101 - 108)</strong>
+            <span style="font-size: 0.74rem; color: #64748B;">المسؤول: ليلى ناصر (4 غرف تتطلب تفتيش)</span>
+          </div>
+          <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #8B5CF6;">
+        </label>
+        <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: white; border: 1px solid #E2E8F0; border-radius: 10px; cursor: pointer;">
+          <div>
+            <strong style="font-size: 0.88rem; display: block;">الطابق الثاني (غرف 201 - 204)</strong>
+            <span style="font-size: 0.74rem; color: #64748B;">المسؤول: زينب جواد (تجهيز جناح 203 بعد الصيانة)</span>
+          </div>
+          <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #8B5CF6;">
+        </label>
+        <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: white; border: 1px solid #E2E8F0; border-radius: 10px; cursor: pointer;">
+          <div>
+            <strong style="font-size: 0.88rem; display: block;">الطابق الثالث والرابع (الأجنحة الملكية 301 - 402)</strong>
+            <span style="font-size: 0.74rem; color: #64748B;">المسؤول: حيدر كمال (تفتيش VIP شخصي)</span>
+          </div>
+          <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #8B5CF6;">
+        </label>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('assignTasksModal')">إلغاء</button>
+        <button type="button" class="btn-primary" onclick="confirmAssignTasks()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>اعتماد التوزيع وإشعار الطاقم</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Previous Month Attendance Modal (سجل الشهر السابق)
+       ==================================================================== -->
+  <div class="modal-overlay" id="previousMonthAttendanceModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title">سجل الحضور والدوام - الشهر السابق (نوفمبر 2026)</h3>
+          <span class="table-badge badge-paid">سجل مؤرشف معتمد</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('previousMonthAttendanceModal')">&times;</button>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
+        <div style="padding: 10px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 10px; text-align: center;">
+          <div style="font-size: 0.72rem; color: #047857; font-weight: 700;">نسبة الانضباط العام</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #065F46;">98.4%</div>
+        </div>
+        <div style="padding: 10px; background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; text-align: center;">
+          <div style="font-size: 0.72rem; color: #166534; font-weight: 700;">ساعات العمل المنجزة</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #15803D;">2,420 س</div>
+        </div>
+        <div style="padding: 10px; background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 10px; text-align: center;">
+          <div style="font-size: 0.72rem; color: #C2410C; font-weight: 700;">ساعات إضافية (Overtime)</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #9A3412;">68 س</div>
+        </div>
+        <div style="padding: 10px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 10px; text-align: center;">
+          <div style="font-size: 0.72rem; color: #6D28D9; font-weight: 700;">إجازات رسمية معتمدة</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #5B21B6;">12 يوماً</div>
+        </div>
+      </div>
+
+      <!-- Historical Table -->
+      <div style="overflow-x: auto;">
+        <table class="glass-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>الموظف</th>
+              <th>القسم / المنصب</th>
+              <th>أيام الحضور</th>
+              <th>ساعات الدوام</th>
+              <th>التأخيرات</th>
+              <th>التقييم الشهري</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>سارة المنصور</strong></td>
+              <td>مدير العمليات</td>
+              <td>30 يوم</td>
+              <td>240 ساعة</td>
+              <td>0 دقيقة</td>
+              <td><span class="table-badge badge-paid">100% ممتاز</span></td>
+            </tr>
+            <tr>
+              <td><strong>فهد القحطاني</strong></td>
+              <td>مشرف الاستقبال</td>
+              <td>29 يوم</td>
+              <td>232 ساعة</td>
+              <td>15 دقيقة</td>
+              <td><span class="table-badge badge-paid">99% ممتاز</span></td>
+            </tr>
+            <tr>
+              <td><strong>منى العلي</strong></td>
+              <td>موظفة استقبال</td>
+              <td>28 يوم</td>
+              <td>224 ساعة</td>
+              <td>20 دقيقة</td>
+              <td><span class="table-badge badge-paid">98% جيد جداً</span></td>
+            </tr>
+            <tr>
+              <td><strong>حيدر كمال</strong></td>
+              <td>مشرف التدبير الفندقي</td>
+              <td>30 يوم</td>
+              <td>248 ساعة</td>
+              <td>0 دقيقة</td>
+              <td><span class="table-badge badge-paid">100% ممتاز</span></td>
+            </tr>
+            <tr>
+              <td><strong>ليلى ناصر</strong></td>
+              <td>تدبير فندقي</td>
+              <td>28 يوم</td>
+              <td>224 ساعة</td>
+              <td>10 دقائق</td>
+              <td><span class="table-badge badge-paid">98% جيد جداً</span></td>
+            </tr>
+            <tr>
+              <td><strong>أحمد سالم</strong></td>
+              <td>صيانة عامة</td>
+              <td>29 يوم</td>
+              <td>236 ساعة</td>
+              <td>30 دقيقة</td>
+              <td><span class="table-badge badge-deposit">96% جيد</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer" style="margin-top: 18px;">
+        <button type="button" class="btn-secondary" onclick="closeModal('previousMonthAttendanceModal')">إغلاق</button>
+        <button type="button" class="btn-primary" onclick="exportAttendanceCSV()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>تصدير كشف الدوام (Excel / CSV)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Night Audit Interactive Checklist Modal (الإقفال اليومي)
+       ==================================================================== -->
+  <div class="modal-overlay" id="nightAuditModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">تشغيل التدقيق والإقفال اليومي (Night Audit Execution)</h3>
+        <button class="modal-close-btn" onclick="closeModal('nightAuditModal')">&times;</button>
+      </div>
+      <p style="font-size: 0.88rem; color: #64748B; margin-bottom: 16px;">
+        سيقوم النظام بإجراء التدقيق الشامل وترحيل رسوم الليلة لجميع الغرف المسكونة وتجميد اليوم المحاسبي السابق وتدوير تاريخ النظام إلى اليوم التالي.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #F8FAFC; border-radius: 10px;">
+          <span style="font-size: 0.88rem; font-weight: 700;">1. ترحيل رسوم الإقامة للغرف المسكونة (38 غرفة)</span>
+          <span class="table-badge badge-paid">جاهز للترحيل</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #F8FAFC; border-radius: 10px;">
+          <span style="font-size: 0.88rem; font-weight: 700;">2. مطابقة صناديق الاستقبال والمطاعم</span>
+          <span class="table-badge badge-paid">متطابق</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #F8FAFC; border-radius: 10px;">
+          <span style="font-size: 0.88rem; font-weight: 700;">3. معالجة حالات عدم الحضور (No-Show)</span>
+          <span class="table-badge badge-paid">0 حالات معلقة</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #F8FAFC; border-radius: 10px;">
+          <span style="font-size: 0.88rem; font-weight: 700;">4. إنشاء وطباعة ميزان المراجعة اليومي التلقائي</span>
+          <span class="table-badge badge-deposit">PDF مؤتمت</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('nightAuditModal')">إلغاء</button>
+        <button type="button" class="btn-primary" onclick="executeNightAudit()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>بدء الإقفال المحاسبي الآن</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Modal: Edit Manager Profile & Name (تعديل بيانات واسم المدير)
+       ==================================================================== -->
+  <div class="modal-overlay" id="editManagerModal">
+    <div class="modal-dialog" style="max-width: 480px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="profile-avatar-icon" style="width: 44px; height: 44px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="modal-title" id="editManagerModalTitle">تعديل بيانات واسم المدير</h3>
+            <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 2px;">تخصيص الاسم والبيانات الظاهرة في واجهة النظام والتقارير</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('editManagerModal')">&times;</button>
+      </div>
+      <form onsubmit="saveManagerProfile(event)">
+        <div class="form-grid" style="grid-template-columns: 1fr; gap: 14px; padding: 6px 0;">
+          <div>
+            <label class="form-label">اسم المدير الكامل</label>
+            <input type="text" class="form-input" id="inputManagerName" required placeholder="أدخل اسم المدير الجديد...">
+          </div>
+          <div>
+            <label class="form-label">المسمى الوظيفي</label>
+            <input type="text" class="form-input" id="inputManagerRole" required placeholder="مثال: مدير العمليات / المدير العام">
+          </div>
+          <div>
+            <label class="form-label">البريد الإلكتروني المهني</label>
+            <input type="email" class="form-input" id="inputManagerEmail" required placeholder="manager@grandstay.com">
+          </div>
+        </div>
+        <div class="modal-footer" style="margin-top: 20px;">
+          <button type="button" class="btn-secondary" onclick="closeModal('editManagerModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>حفظ وتطبيق الاسم</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Guest Arrival & Check-In Modal (تسجيل وصول النزيل)
+       ==================================================================== -->
+  <div class="modal-overlay" id="guestArrivalModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">تسجيل وصول واستقبال النزيل (Guest Check-In)</h3>
+        <button class="modal-close-btn" onclick="closeModal('guestArrivalModal')">&times;</button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 14px; background: #F8FAFC; border-radius: 12px; margin-bottom: 16px;">
+        <div class="guest-feed-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background: rgba(56, 189, 248, 0.2); color: #0284C7;">م.ع</div>
+        <div>
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: #1E293B;">محمد العبيدي</h4>
+          <p style="font-size: 0.8rem; color: #64748B;">حجز رقم #BK-9108 • غرفة 204 (مزدوجة ديلوكس)</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 10px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block;">موعد الوصول المتوقع</span>
+          <strong style="font-size: 0.88rem; color: #1E293B;">اليوم • الساعة 14:30</strong>
+        </div>
+        <div style="background: white; border: 1px solid #E2E8F0; padding: 10px; border-radius: 10px;">
+          <span style="font-size: 0.72rem; color: #64748B; display: block;">مدة الإقامة والتكلفة</span>
+          <strong style="font-size: 0.88rem; color: #1E293B;">3 ليالٍ • $360</strong>
+        </div>
+      </div>
+
+      <div style="background: #F1F5F9; border-radius: 10px; padding: 12px; margin-bottom: 16px;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 8px;">إجراءات مكتب الاستقبال:</div>
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #475569; margin-bottom: 6px; cursor: pointer;">
+          <input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #8B5CF6;">
+          <span>التحقق من بطاقة الهوية الوطنية أو جواز السفر</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #475569; margin-bottom: 6px; cursor: pointer;">
+          <input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #8B5CF6;">
+          <span>الغرفة 204 معتمدة وجاهزة من قسم التدبير الفندقي</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #475569; cursor: pointer;">
+          <input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #8B5CF6;">
+          <span>استيفاء توقيع بطاقة التسجيل واستلام بطاقة الدخول الذكية</span>
+        </label>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('guestArrivalModal')">إلغاء</button>
+        <button type="button" class="btn-secondary" style="border-color: #8B5CF6; color: #7C3AED; font-weight: 700;" onclick="openKeyCardEncoder('204')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          <span>برمجة المفتاح (204)</span>
+        </button>
+        <button type="button" class="btn-primary" id="btnConfirmArrivalCheckIn" onclick="confirmGuestArrivalCheckIn()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>تأكيد تسكين النزيل (Check-In)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Guest Check-Out & Settlement Modal (مغادرة وتسوية حساب النزيل)
+       ==================================================================== -->
+  <div class="modal-overlay" id="guestCheckoutModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">تسوية الحساب وإتمام المغادرة (Check-Out)</h3>
+        <button class="modal-close-btn" onclick="closeModal('guestCheckoutModal')">&times;</button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 14px; background: #FFF7ED; border: 1px solid #FFEDD5; border-radius: 12px; margin-bottom: 16px;">
+        <div class="guest-feed-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background: rgba(251, 146, 60, 0.2); color: #D97706;">س.خ</div>
+        <div>
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: #1E293B;">سمير خليل</h4>
+          <p style="font-size: 0.8rem; color: #64748B;">حجز رقم #BK-9102 • غرفة 108 (فردية كلاسيك)</p>
+        </div>
+      </div>
+
+      <div style="background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.85rem; color: #64748B;">فترة الإقامة:</span>
+          <span style="font-weight: 700; color: #1E293B;">21 - 24 أكتوبر 2026 (3 ليالٍ)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.85rem; color: #64748B;">إجمالي الحساب:</span>
+          <span style="font-weight: 800; color: #1E293B; font-size: 1.05rem;">$340 USD</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px dashed #E2E8F0;">
+          <span style="font-size: 0.85rem; color: #64748B;">استلام بطاقة المفتاح الذكية:</span>
+          <span style="font-weight: 700; color: #059669;">تم الاستلام (Return OK)</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('guestCheckoutModal')">إلغاء</button>
+        <button type="button" class="btn-secondary" style="border-color: #8B5CF6; color: #7C3AED; font-weight: 700;" onclick="openGuestFolio('سمير خليل', 'غرفة 108 كلاسيك (مغادرة اليوم)', 340, 'BK-9102')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          <span>عرض الفاتورة</span>
+        </button>
+        <button type="button" class="btn-primary" id="btnConfirmGuestCheckOut" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);" onclick="confirmGuestCheckOut()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>إتمام المغادرة وإخلاء الغرفة</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       All Arrivals & Departures Modal (عرض كامل حركة الاستقبال والمغادرة)
+       ==================================================================== -->
+  <div class="modal-overlay" id="arrivalsDeparturesModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title">حركة الاستقبال والمغادرة اليوم (Today Arrivals & Departures)</h3>
+          <span class="table-badge badge-deposit">24 أكتوبر 2026</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('arrivalsDeparturesModal')">&times;</button>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px;">
+        <div style="padding: 12px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 12px; text-align: center;">
+          <div style="font-size: 0.75rem; color: #047857; font-weight: 700;">الوصول المتوقع اليوم</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: #065F46;">3 نزلاء</div>
+        </div>
+        <div style="padding: 12px; background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 12px; text-align: center;">
+          <div style="font-size: 0.75rem; color: #C2410C; font-weight: 700;">المغادرات المتوقعة اليوم</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: #9A3412;">2 نزلاء</div>
+        </div>
+        <div style="padding: 12px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 12px; text-align: center;">
+          <div style="font-size: 0.75rem; color: #6D28D9; font-weight: 700;">كبار الشخصيات (VIP)</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: #5B21B6;">1 نزيل</div>
+        </div>
+      </div>
+
+      <!-- Table of Guests -->
+      <div style="overflow-x: auto;">
+        <table class="glass-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>النزيل</th>
+              <th>الغرفة / الفئة</th>
+              <th>النوع</th>
+              <th>الوقت</th>
+              <th>الحالة</th>
+              <th>الإجراء السريع</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="font-weight: 800;">د. طارق الحكيم</div>
+                <span class="vip-badge-pill" style="font-size: 0.65rem; padding: 1px 6px;">VIP Platinum</span>
+              </td>
+              <td>جناح 402 • رويال فاخر</td>
+              <td><span class="table-badge badge-deposit">وصول VIP</span></td>
+              <td>14:00</td>
+              <td><span class="status-clean" id="modalVipStatusText" style="padding: 2px 8px; border-radius: 999px; font-size: 0.75rem;">وصول متوقع</span></td>
+              <td>
+                <button type="button" class="pill-button" onclick="closeModal('arrivalsDeparturesModal'); openVipModal();">إدارة الجناح</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="font-weight: 700;">محمد العبيدي</div>
+                <span style="font-size: 0.72rem; color: #64748B;">#BK-9108</span>
+              </td>
+              <td>غرفة 204 • ديلوكس</td>
+              <td><span class="table-badge badge-paid">وصول عادي</span></td>
+              <td>14:30</td>
+              <td><span class="status-clean" id="modalMohStatusText" style="padding: 2px 8px; border-radius: 999px; font-size: 0.75rem;">وصول متوقع</span></td>
+              <td>
+                <button type="button" class="pill-button" onclick="closeModal('arrivalsDeparturesModal'); openGuestArrivalModal('G-204');">تسجيل وصول</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="font-weight: 700;">ريم القيسي</div>
+                <span style="font-size: 0.72rem; color: #64748B;">#BK-9109</span>
+              </td>
+              <td>غرفة 302 • بريميوم</td>
+              <td><span class="table-badge badge-paid">وصول عادي</span></td>
+              <td>16:00</td>
+              <td><span class="status-clean" style="padding: 2px 8px; border-radius: 999px; font-size: 0.75rem;">وصول متوقع</span></td>
+              <td>
+                <button type="button" class="pill-button" onclick="openKeyCardEncoder('302');">إصدار مفتاح</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="font-weight: 700;">سمير خليل</div>
+                <span style="font-size: 0.72rem; color: #64748B;">#BK-9102</span>
+              </td>
+              <td>غرفة 108 • كلاسيك</td>
+              <td><span class="table-badge badge-maint">مغادرة</span></td>
+              <td>12:00</td>
+              <td><span class="status-dirty" id="modalSamStatusText" style="padding: 2px 8px; border-radius: 999px; font-size: 0.75rem;">مغادرة اليوم</span></td>
+              <td>
+                <button type="button" class="pill-button" onclick="closeModal('arrivalsDeparturesModal'); openGuestCheckoutModal('G-108');">تسوية ومغادرة</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="font-weight: 700;">ياسر الشمري</div>
+                <span style="font-size: 0.72rem; color: #64748B;">#BK-9100</span>
+              </td>
+              <td>غرفة 201 • ديلوكس</td>
+              <td><span class="table-badge badge-maint">مغادرة</span></td>
+              <td>11:30</td>
+              <td><span class="status-clean" style="padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; background: #F1F5F9; color: #64748B;">تمت المغادرة ✓</span></td>
+              <td>
+                <button type="button" class="pill-button" onclick="openGuestFolio('ياسر الشمري', 'غرفة 201 ديلوكس', 280, 'BK-9100');">عرض الفاتورة</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer" style="margin-top: 18px;">
+        <button type="button" class="btn-secondary" onclick="closeModal('arrivalsDeparturesModal')">إغلاق</button>
+        <button type="button" class="btn-primary" onclick="closeModal('arrivalsDeparturesModal'); switchView('bookings');">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>عرض في التقويم الزمني الكامل (Tape Chart)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Add New Employee Modal (إضافة موظف جديد)
+       ==================================================================== -->
+  <div class="modal-overlay" id="addEmployeeModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">إضافة موظف جديد إلى الكادر الفندقي</h3>
+        <button class="modal-close-btn" onclick="closeModal('addEmployeeModal')">&times;</button>
+      </div>
+      <form onsubmit="saveNewEmployee(event)">
+        <div class="form-grid">
+          <div>
+            <label class="form-label">الاسم الكامل للموظف</label>
+            <input type="text" id="addEmpName" class="form-input" placeholder="مثال: يوسف العراقي" required>
+          </div>
+          <div>
+            <label class="form-label">المسمى الوظيفي</label>
+            <input type="text" id="addEmpRole" class="form-input" placeholder="مثال: موظف علاقات ضيوف" required>
+          </div>
+          <div>
+            <label class="form-label">القسم التشغيلي</label>
+            <select class="form-select" id="addEmpDept">
+              <option value="قسم الاستقبال">قسم الاستقبال (Front Office)</option>
+              <option value="التدبير الفندقي">التدبير الفندقي (Housekeeping)</option>
+              <option value="قسم الصيانة">قسم الصيانة (Engineering)</option>
+              <option value="المحاسبة والإدارة">المحاسبة والإدارة (Admin & Finance)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">المناوبة المخصصة</label>
+            <select class="form-select" id="addEmpShift">
+              <option value="morning">مناوبة الصباح (07:00 ص - 03:00 م)</option>
+              <option value="evening">مناوبة المساء (03:00 م - 11:00 م)</option>
+              <option value="night">مناوبة الليل (11:00 م - 07:00 ص)</option>
+              <option value="management">دوام إداري عام (08:00 ص - 04:00 م)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">الراتب الشهري ($ USD)</label>
+            <input type="number" id="addEmpSalary" class="form-input" placeholder="750" value="750" min="200" required>
+          </div>
+          <div>
+            <label class="form-label">رقم الهاتف</label>
+            <input type="text" id="addEmpPhone" class="form-input" placeholder="+964 770 000 0000" required>
+          </div>
+          <div>
+            <label class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="addEmpEmail" class="form-input" placeholder="emp@grandstay.com">
+          </div>
+          <div>
+            <label class="form-label">نوع العقد</label>
+            <select class="form-select" id="addEmpContract">
+              <option value="دوام كامل">دوام كامل (Full-Time)</option>
+              <option value="دوام جزئي">دوام جزئي (Part-Time)</option>
+              <option value="عقد تدريبي">عقد تدريبي (Internship)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('addEmployeeModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>اعتماد التعيين وحفظ الملف</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Edit Employee Modal (تعديل بيانات موظف)
+       ==================================================================== -->
+  <div class="modal-overlay" id="editEmployeeModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">تعديل بيانات الموظف والعقد</h3>
+        <button class="modal-close-btn" onclick="closeModal('editEmployeeModal')">&times;</button>
+      </div>
+      <form onsubmit="saveEditedEmployee(event)">
+        <input type="hidden" id="editEmpId">
+        <div class="form-grid">
+          <div>
+            <label class="form-label">الاسم الكامل</label>
+            <input type="text" id="editEmpName" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">المسمى الوظيفي</label>
+            <input type="text" id="editEmpRole" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">القسم</label>
+            <select class="form-select" id="editEmpDept">
+              <option value="قسم الاستقبال">قسم الاستقبال (Front Office)</option>
+              <option value="التدبير الفندقي">التدبير الفندقي (Housekeeping)</option>
+              <option value="قسم الصيانة">قسم الصيانة (Engineering)</option>
+              <option value="إدارة عامة">إدارة عامة (Management)</option>
+              <option value="المحاسبة والاستقبال">المحاسبة والاستقبال (Finance)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">المناوبة</label>
+            <select class="form-select" id="editEmpShift">
+              <option value="morning">مناوبة الصباح (07:00 ص - 03:00 م)</option>
+              <option value="evening">مناوبة المساء (03:00 م - 11:00 م)</option>
+              <option value="night">مناوبة الليل (11:00 م - 07:00 ص)</option>
+              <option value="management">دوام إداري عام</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">الراتب الشهري ($ USD)</label>
+            <input type="number" id="editEmpSalary" class="form-input" min="200" required>
+          </div>
+          <div>
+            <label class="form-label">رقم الهاتف</label>
+            <input type="text" id="editEmpPhone" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="editEmpEmail" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">نوع العقد</label>
+            <select class="form-select" id="editEmpContract">
+              <option value="دوام كامل">دوام كامل (Full-Time)</option>
+              <option value="دوام جزئي">دوام جزئي (Part-Time)</option>
+              <option value="عقد تدريبي">عقد تدريبي (Internship)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">حالة الدوام</label>
+            <select class="form-select" id="editEmpStatus">
+              <option value="duty">على رأس العمل (On Duty)</option>
+              <option value="break">استراحة وجبة (Meal Break)</option>
+              <option value="maint">مهمة صيانة (Maintenance)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('editEmployeeModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">حفظ التعديلات</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Payroll Summary Modal (كشف الرواتب والمستحقات)
+       ==================================================================== -->
+  <div class="modal-overlay" id="payrollModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title">مسير الرواتب والمستحقات الشهرية (Payroll Sheet - ديسمبر 2026)</h3>
+          <span class="table-badge badge-paid">مسير مالي معتمد</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button type="button" class="pill-button" id="btnTogglePayrollEditMode" onclick="togglePayrollSalaryEditMode()" title="تعديل الرواتب مباشرة في الجدول" style="color: #7C3AED; border-color: #DDD6FE;">
+            <span id="payrollEditBtnText">✏️ تعديل الرواتب</span>
+          </button>
+          <button type="button" class="pill-button" onclick="exportPayrollCSV()" title="تصدير كشف الرواتب Excel">تصدير Excel</button>
+          <button type="button" class="pill-button" onclick="printPayrollSheet()" title="طباعة كشف الرواتب">طباعة المسير</button>
+          <button class="modal-close-btn" onclick="closeModal('payrollModal')">&times;</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px;">
+        <div style="padding: 12px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; text-align: center;">
+          <span style="font-size: 0.75rem; color: #64748B;">إجمالي الرواتب الأساسية</span>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #1E293B;" id="payrollBaseTotal">$7,250</div>
+        </div>
+        <div style="padding: 12px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 12px; text-align: center;">
+          <span style="font-size: 0.75rem; color: #047857;">مكافآت وإضافي (Overtime)</span>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #065F46;" id="payrollBonusTotal">+$420</div>
+        </div>
+        <div style="padding: 12px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; text-align: center;">
+          <span style="font-size: 0.75rem; color: #1D4ED8;">الصافي المستحق للصرف</span>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #1E40AF;" id="payrollNetTotal">$7,670</div>
+        </div>
+      </div>
+
+      <div style="max-height: 320px; overflow-y: auto;">
+        <table class="glass-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>الموظف</th>
+              <th>القسم</th>
+              <th>الراتب الأساسي</th>
+              <th>بدل إضافي / مكافأة</th>
+              <th>الصافي</th>
+              <th>حالة الصرف</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="payrollTableBody">
+            <!-- Dynamically populated via renderPayrollTable() -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer" style="margin-top: 18px;">
+        <button type="button" class="btn-secondary" onclick="closeModal('payrollModal')">إغلاق</button>
+        <button type="button" class="btn-primary" onclick="disbursePayroll()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>اعتماد وصرف رواتب الشهر فورا</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Salary Adjustment Modal (تعديل الراتب والمستحقات)
+       ==================================================================== -->
+  <div class="modal-overlay" id="salaryAdjustModal">
+    <div class="modal-dialog" style="max-width: 520px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h3 class="modal-title">تعديل الراتب والمستحقات المالية</h3>
+          <span class="table-badge badge-paid" id="salAdjDeptBadge">قسم الاستقبال</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('salaryAdjustModal')">&times;</button>
+      </div>
+      <form onsubmit="saveSalaryAdjustment(event)">
+        <input type="hidden" id="salAdjEmpId">
+        
+        <!-- Employee Summary Strip -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0; margin-bottom: 16px;">
+          <div>
+            <h4 style="margin: 0 0 2px 0; font-size: 1rem; color: #1E293B;" id="salAdjEmpName">فهد القحطاني</h4>
+            <span style="font-size: 0.78rem; color: #64748B;" id="salAdjEmpRole">مشرف الاستقبال</span>
+          </div>
+          <span class="table-badge badge-deposit" id="salAdjEmpCode">EMP-2024-02</span>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label class="form-label">الراتب الأساسي الشهري ($ USD)</label>
+            <input type="number" id="salAdjBaseSalary" class="form-input" min="100" step="10" required oninput="updateSalaryAdjustPreview()">
+          </div>
+          <div>
+            <label class="form-label">بدل إضافي / مكافأة شهرية ($ USD)</label>
+            <input type="number" id="salAdjBonus" class="form-input" min="0" step="5" value="0" oninput="updateSalaryAdjustPreview()">
+          </div>
+          <div class="form-group-full">
+            <label class="form-label">سبب التعديل أو الزيادة</label>
+            <select class="form-select" id="salAdjReason">
+              <option value="تعديل دوري سنوي معتمد">تعديل دوري سنوي معتمد</option>
+              <option value="ترقية وظيفية وتقدير أداء">ترقية وظيفية وتقدير أداء</option>
+              <option value="زيادة مهام وساعات عمل إضافية">زيادة مهام وساعات عمل إضافية</option>
+              <option value="تعديل وتجديد بنود عقد العمل">تعديل وتجديد بنود عقد العمل</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Live Net Salary Calculation Banner -->
+        <div style="margin-top: 14px; padding: 14px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <span style="font-size: 0.78rem; color: #1D4ED8; display: block; font-weight: 700;">الصافي المالي الجديد بعد التعديل:</span>
+            <small style="color: #64748B; font-size: 0.72rem;">(الراتب الأساسي + البدلات والمكافآت)</small>
+          </div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: #1E40AF;" id="salAdjNetPreview">$890</div>
+        </div>
+
+        <div class="modal-footer" style="margin-top: 18px;">
+          <button type="button" class="btn-secondary" onclick="closeModal('salaryAdjustModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>حفظ واعتماد الراتب الجديد</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       Award Bonus Modal (صرف مكافأة تقديرية)
+       ==================================================================== -->
+  <div class="modal-overlay" id="bonusModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">صرف مكافأة تقديرية لموظف</h3>
+        <button class="modal-close-btn" onclick="closeModal('bonusModal')">&times;</button>
+      </div>
+      <form onsubmit="confirmEmployeeBonus(event)">
+        <input type="hidden" id="bonusEmpId">
+        <div class="form-grid">
+          <div class="form-group-full">
+            <label class="form-label">الموظف المستحق</label>
+            <input type="text" id="bonusEmpName" class="form-input" readonly style="background: #F1F5F9; font-weight: 700;">
+          </div>
+          <div>
+            <label class="form-label">مبلغ المكافأة ($ USD)</label>
+            <input type="number" id="bonusAmount" class="form-input" value="100" min="10" required>
+          </div>
+          <div>
+            <label class="form-label">نوع التكريم</label>
+            <select class="form-select" id="bonusType">
+              <option value="انضباط وتميز">انضباط وتميز تشغيلي</option>
+              <option value="إشادة من نزيل VIP">إشادة خاصة من نزيل VIP</option>
+              <option value="ساعات عمل إضافية">ساعات عمل إضافية متفانية</option>
+            </select>
+          </div>
+          <div class="form-group-full">
+            <label class="form-label">ملاحظة التقدير الإداري</label>
+            <input type="text" id="bonusReason" class="form-input" placeholder="اكتب كلمة شكر وتوجيه للموظف..." required value="جهود متميزة في خدمة الضيوف والانضباط الدائم">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('bonusModal')">إلغاء</button>
+          <button type="submit" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>اعتماد وصرف المكافأة</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container"></div>
+
+  <!-- Main JavaScript File (Production Minified) -->
+  <script src="assets/js/app.min.js"></script>
+</body>
+</html>
